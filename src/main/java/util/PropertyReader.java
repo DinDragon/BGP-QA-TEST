@@ -1,5 +1,7 @@
 package util;
 
+import constants.Constants;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,24 +9,19 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.Properties;
 
-public class PropertyReader {
-
-    private String propertiesFileLocation = "src/main/resources/Properties/config.properties";
-    public String CHROME_BINARY_LOCATION = "chromeBinaryLocation";
-    public String CHROME_WEBDRIVER_LOCATION = "chromeWebDriverLocation";
-    public String BASE_URL = "baseUrl";
+public final class PropertyReader {
 
     public PropertyReader() {
     }
 
-    public Properties getProperties() throws IOException {
+    public static Properties getProperties() throws IOException {
         Properties properties = new Properties();
-        try (InputStream input = new FileInputStream(propertiesFileLocation)) {
+        try (InputStream input = new FileInputStream(Constants.PROPERTY_VARIABLE.PROPERTY_FILE_LOCATION)) {
 
-            Properties prop = new Properties();
+            properties = new Properties();
 
             // load a properties file
-            prop.load(new InputStreamReader(input, Charset.forName("UTF-8")));
+            properties.load(new InputStreamReader(input, Charset.forName("UTF-8")));
             // get the property value and print it out
             return properties;
 
@@ -34,9 +31,9 @@ public class PropertyReader {
         }
     }
 
-    public String getProperty(String key) throws IOException {
+    public static String getProperty(String key) throws IOException {
         Properties properties = new Properties();
-        try (InputStream input = new FileInputStream(propertiesFileLocation)) {
+        try (InputStream input = new FileInputStream(Constants.PROPERTY_VARIABLE.PROPERTY_FILE_LOCATION)) {
 
             properties = new Properties();
 
@@ -45,10 +42,15 @@ public class PropertyReader {
             System.out.println(properties.size());
             // get the property value and print it out
 
+
         } catch (IOException ex) {
             ex.printStackTrace();
             throw ex;
         }
-        return properties.getProperty(key);
+//        if(key.equals(Constants.PROPERTY_VARIABLE.SERVER_LOGIN_PASSWORD)){
+//            return AES.decrypt(properties.getProperty(key), Constants.SECRET_KEY);
+//        }else {
+            return properties.getProperty(key);
+//        }
     }
 }

@@ -1,4 +1,4 @@
-package model;
+package model.MRAForm;
 
 import com.opencsv.bean.CsvBindByName;
 

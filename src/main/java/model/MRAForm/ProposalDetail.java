@@ -1,16 +1,16 @@
-package model;
+package model.MRAForm;
 
 import com.opencsv.bean.CsvBindByName;
 
 import java.time.LocalDate;
 
-public class ProposalDetails {
+public class ProposalDetail {
     @CsvBindByName
     String projectTitle;
     @CsvBindByName
-    LocalDate startDate;
+    String startDate;
     @CsvBindByName
-    LocalDate endDate;
+    String endDate;
     @CsvBindByName
     String projectDescription;
     @CsvBindByName
@@ -32,19 +32,19 @@ public class ProposalDetails {
         this.projectTitle = projectTitle;
     }
 
-    public LocalDate getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -96,7 +96,7 @@ public class ProposalDetails {
         this.remarks = remarks;
     }
 
-    public ProposalDetails(String projectTitle, LocalDate startDate, LocalDate endDate, String projectDescription, String activity, String targetMarket, String firstTimeApplication, String supportingDocumentLocation, String remarks) {
+    public ProposalDetail(String projectTitle, String startDate, String endDate, String projectDescription, String activity, String targetMarket, String firstTimeApplication, String supportingDocumentLocation, String remarks) {
         this.projectTitle = projectTitle;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -108,6 +108,6 @@ public class ProposalDetails {
         this.remarks = remarks;
     }
 
-    public ProposalDetails() {
+    public ProposalDetail() {
     }
 }

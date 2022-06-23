@@ -1,12 +1,12 @@
-package model;
+package model.MRAForm;
 
 import com.opencsv.bean.CsvBindByName;
 
 import java.time.LocalDate;
 
-public class BusinessImpactDetails {
+public class BusinessImpactDetail {
     @CsvBindByName
-    LocalDate FYEndDate;
+    String FYEndDate;
     @CsvBindByName
     String overseasSale1;
     @CsvBindByName
@@ -29,11 +29,11 @@ public class BusinessImpactDetails {
     String nonTangibleBenefits;
 
 
-    public LocalDate getFYEndDate() {
+    public String getFYEndDate() {
         return FYEndDate;
     }
 
-    public void setFYEndDate(LocalDate FYEndDate) {
+    public void setFYEndDate(String FYEndDate) {
         this.FYEndDate = FYEndDate;
     }
 
@@ -117,7 +117,7 @@ public class BusinessImpactDetails {
         this.nonTangibleBenefits = nonTangibleBenefits;
     }
 
-    public BusinessImpactDetails(LocalDate FYEndDate, String overseasSale1, String overseasSale2, String overseasSale3, String overseasSale4, String overseasInvestments1, String overseasInvestments2, String overseasInvestment3, String overseasInvestments4, String rationaleForProjections, String nonTangibleBenefits) {
+    public BusinessImpactDetail(String FYEndDate, String overseasSale1, String overseasSale2, String overseasSale3, String overseasSale4, String overseasInvestments1, String overseasInvestments2, String overseasInvestment3, String overseasInvestments4, String rationaleForProjections, String nonTangibleBenefits) {
         this.FYEndDate = FYEndDate;
         this.overseasSale1 = overseasSale1;
         this.overseasSale2 = overseasSale2;
@@ -131,6 +131,6 @@ public class BusinessImpactDetails {
         this.nonTangibleBenefits = nonTangibleBenefits;
     }
 
-    public BusinessImpactDetails() {
+    public BusinessImpactDetail() {
     }
 }

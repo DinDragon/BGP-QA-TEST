@@ -1,12 +1,13 @@
-package model;
+package model.MRAForm.Cost;
 
+import com.google.gson.Gson;
 import com.opencsv.bean.CsvBindByName;
 import constants.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CostDetails {
+public class CostDetail {
     List<ThirdPartyCostDetail> thirdPartyCostDetailList = new ArrayList<>();
     List<OfficeSpaceRentalDetail> officeSpaceRentalList = new ArrayList<>();
     List<SalaryDetail> salaryDetailList = new ArrayList<>();
@@ -88,6 +89,8 @@ public class CostDetails {
 
     public List<Integer> convertStringListToInt(String unparsedString){
         List<String> stringList = List.of(unparsedString.split(Constants.LIST_OF_STRING_DELIMITER));
+        Gson gson = new Gson();
+        System.out.println(stringList);
         List<Integer> integers = new ArrayList<>();
         for(String str : stringList){
             int i = Integer.parseInt(str);
@@ -96,10 +99,10 @@ public class CostDetails {
         return integers;
     }
 
-    public CostDetails() {
+    public CostDetail() {
     }
 
-    public CostDetails(String thirdPartyCostDetailIdList, String officeSpaceRentalIdList, String salaryDetailIdList) {
+    public CostDetail(String thirdPartyCostDetailIdList, String officeSpaceRentalIdList, String salaryDetailIdList) {
         this.thirdPartyCostDetailIdList = thirdPartyCostDetailIdList;
         this.officeSpaceRentalIdList = officeSpaceRentalIdList;
         this.salaryDetailIdList = salaryDetailIdList;

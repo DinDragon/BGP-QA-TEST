@@ -1,4 +1,4 @@
-package model;
+package model.MRAForm.Cost;
 
 import com.opencsv.bean.CsvBindByName;
 

@@ -1,8 +1,8 @@
-package model;
+package model.MRAForm;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class ContactDetails {
+public class ContactDetail {
     @CsvBindByName
     String name;
     @CsvBindByName
@@ -14,7 +14,7 @@ public class ContactDetails {
     @CsvBindByName
     String altEmailAddress;
     @CsvBindByName
-    String mailingAddSame;
+    String isMailAddrSame;
     @CsvBindByName
     String postalCode;
     @CsvBindByName
@@ -28,7 +28,7 @@ public class ContactDetails {
     @CsvBindByName
     String buildingName;
     @CsvBindByName
-    String LOASame;
+    String isLOASame;
     @CsvBindByName
     String LOAName;
     @CsvBindByName
@@ -76,12 +76,12 @@ public class ContactDetails {
         this.altEmailAddress = altEmailAddress;
     }
 
-    public String getMailingAddSame() {
-        return mailingAddSame;
+    public String getIsMailAddrSame() {
+        return isMailAddrSame;
     }
 
-    public void setMailingAddSame(String mailingAddSame) {
-        this.mailingAddSame = mailingAddSame;
+    public void setIsMailAddrSame(String isMailAddrSame) {
+        this.isMailAddrSame = isMailAddrSame;
     }
 
     public String getPostalCode() {
@@ -132,12 +132,12 @@ public class ContactDetails {
         this.buildingName = buildingName;
     }
 
-    public String getLOASame() {
-        return LOASame;
+    public String getIsLOASame() {
+        return isLOASame;
     }
 
-    public void setLOASame(String LOASame) {
-        this.LOASame = LOASame;
+    public void setIsLOASame(String isLOASame) {
+        this.isLOASame = isLOASame;
     }
 
     public String getLOAName() {
@@ -164,25 +164,25 @@ public class ContactDetails {
         this.LOAEmail = LOAEmail;
     }
 
-    public ContactDetails(String name, String jobTitle, String contactNumber, String emailAddress, String altEmailAddress, String mailingAddSame, String postalCode, String blkHouseNo, String street, String level, String unit, String buildingName, String LOASame, String LOAName, String LOAJobTitle, String LOAEmail) {
+    public ContactDetail(String name, String jobTitle, String contactNumber, String emailAddress, String altEmailAddress, String isMailAddrSame, String postalCode, String blkHouseNo, String street, String level, String unit, String buildingName, String isLOASame, String LOAName, String LOAJobTitle, String LOAEmail) {
         this.name = name;
         this.jobTitle = jobTitle;
         this.contactNumber = contactNumber;
         this.emailAddress = emailAddress;
         this.altEmailAddress = altEmailAddress;
-        this.mailingAddSame = mailingAddSame;
+        this.isMailAddrSame = isMailAddrSame;
         this.postalCode = postalCode;
         this.blkHouseNo = blkHouseNo;
         this.street = street;
         this.level = level;
         this.unit = unit;
         this.buildingName = buildingName;
-        this.LOASame = LOASame;
+        this.isLOASame = isLOASame;
         this.LOAName = LOAName;
         this.LOAJobTitle = LOAJobTitle;
         this.LOAEmail = LOAEmail;
     }
 
-    public ContactDetails() {
+    public ContactDetail() {
     }
 }
