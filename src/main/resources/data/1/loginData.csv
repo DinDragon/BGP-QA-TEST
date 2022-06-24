@@ -1,2 +1,2 @@
-userUEN,userId,userRole,userName
-BGPQEDEMO,S1234567A,Acceptor,Tan Ah Kow
+userUEN,userId,userRole,userName,postalCode,blkHseNo,street,level,unit,buildingName
+BGPQEDEMO,S1234567A,Acceptor,Tan Ah Kow,650320,320,Bukit batok street 33,03,33,

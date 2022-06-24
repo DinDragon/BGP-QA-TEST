@@ -8,6 +8,7 @@ import model.MRAForm.Cost.CostDetail;
 import model.MRAForm.EligibilityDetail;
 import model.LoginDetail;
 import model.MRAForm.ProposalDetail;
+import modules.MRAForm.ContactForm;
 import modules.MRAForm.EligibilityForm;
 import modules.MRAForm.LoadMRAForm;
 import modules.ManualLogin;
@@ -27,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase1 {
 
-    public static WebDriver driver;
+    public WebDriver driver;
     WebDriverWait driverWait;
 
     static DataReader dataReader = new DataReader();
@@ -65,21 +66,36 @@ public class TestCase1 {
         for(EligibilityDetail eligibilityDetail: eligibilityDetails){
             ManualLogin.logIn(driver,loginDetail);
             LoadMRAForm.loadMRAForm(driver);
-
+            ContactDetail contactDetail = contactDetails.get(count);
+            ProposalDetail proposalDetail = proposalDetails.get(count);
+            BusinessImpactDetail businessImpactDetail = businessImpactDetails.get(count);
+            CostDetail costDetail = costDetails.get(count);
 
             System.out.println("----Start Test 1." + (count+1) + "-------");
+            util.printObjectToJson(loginDetail);
             util.printObjectToJson(eligibilityDetail);
-            util.printObjectToJson(contactDetails.get(count));
-            util.printObjectToJson(proposalDetails.get(count));
-            util.printObjectToJson(businessImpactDetails.get(count));
-            util.printObjectToJson(costDetails.get(count));
+            util.printObjectToJson(contactDetail);
+            util.printObjectToJson(proposalDetail);
+            util.printObjectToJson(businessImpactDetail);
+            util.printObjectToJson(costDetail);
 
             //Fill in eligibility
             EligibilityForm.fillInMRAEligibility(driver,eligibilityDetail);
             EligibilityForm.clickSaveButtonAndRefresh(driver);
             EligibilityForm.checkMRAEligibility(driver,eligibilityDetail);
+            EligibilityForm.clickNextButton(driver);
 
+            //Fill in contact form
+            ContactForm.fillInMainContactPerson(driver,contactDetail);
+            ContactForm.fillInMailingAddress(driver,contactDetail, loginDetail);
+            ContactForm.fillInLetterOfOffer(driver,contactDetail);
+            ContactForm.clickSaveButtonAndRefresh(driver);
+            ContactForm.checkMainContactPerson(driver,contactDetail);
+            ContactForm.checkMailingAddress(driver, contactDetail, loginDetail);
+            ContactForm.checkLetterOffOfffer(driver, contactDetail);
+            ContactForm.clickNextButton(driver);
 
+            //
 
             System.out.println("----End Test 1." + (count+1) + "-------");
 

@@ -52,7 +52,6 @@ public final class ManualLogin {
 
     driver.findElement(By.id("entityId")).click();
     driver.findElement(By.id("entityId")).sendKeys(loginDetail.getUserUEN());
-    driver.findElement(By.cssSelector(".col-form-label:nth-child(5)")).click();
     driver.findElement(By.id("userId")).click();
     driver.findElement(By.id("userId")).sendKeys(loginDetail.getUserId());
     driver.findElement(By.id("userRole")).click();

@@ -17,7 +17,6 @@ import static org.hamcrest.core.IsNot.not;
 public final class EligibilityForm {
     public static void fillInMRAEligibility(WebDriver driver, EligibilityDetail eligibilityDetail) {
         JavascriptExecutor je =  (JavascriptExecutor)driver;
-        assertThat(driver.findElement(By.cssSelector(".grant-title")).getText(), is("Market Readiness Assistance (MRA)"));
         int noSelectCount = 0;
         //EL1//
         if(eligibilityDetail.getEL1().equals(Constants.YES_OR_NO.YES)){
@@ -91,22 +90,20 @@ public final class EligibilityForm {
     }
 
     public static void clickSaveButtonAndRefresh(WebDriver driver) throws InterruptedException {
-        driver.findElement(By.id(MRAFormHTMLFieldMapper.ELIGIBILITY.SAVE_BUTTON_ID)).click();
+        driver.findElement(By.id(MRAFormHTMLFieldMapper.SAVE_BUTTON_ID)).click();
         WebDriverWait webDriverWait = new WebDriverWait(driver,30);
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(MRAFormHTMLFieldMapper.ELIGIBILITY.DRAFT_SAVED_NOTICE_CSS)));
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(MRAFormHTMLFieldMapper.DRAFT_SAVED_NOTICE_CSS)));
         driver.navigate().refresh();
     }
 
     public static void clickNextButton(WebDriver driver){
-        driver.findElement(By.id(MRAFormHTMLFieldMapper.ELIGIBILITY.NEXT_BUTTON_ID)).click();
+        driver.findElement(By.id(MRAFormHTMLFieldMapper.NEXT_BUTTON_ID)).click();
     }
 
 
     public static void checkMRAEligibility(WebDriver driver, EligibilityDetail eligibilityDetail){
         JavascriptExecutor je =  (JavascriptExecutor)driver;
-        je.executeScript("window.scrollTo(0," + driver.findElement(By.cssSelector(".grant-title")).getLocation()+ ")");
 
-        assertThat(driver.findElement(By.cssSelector(".grant-title")).getText(), is("Market Readiness Assistance (MRA)"));
         int noSelectCount = 0;
         //EL1//
         if(eligibilityDetail.getEL1().equals(Constants.YES_OR_NO.YES)){
