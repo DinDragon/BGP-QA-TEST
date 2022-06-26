@@ -2,8 +2,6 @@ package model.MRAForm;
 
 import com.opencsv.bean.CsvBindByName;
 
-import java.time.LocalDate;
-
 public class BusinessImpactDetail {
     @CsvBindByName
     String FYEndDate;
@@ -20,7 +18,7 @@ public class BusinessImpactDetail {
     @CsvBindByName
     String overseasInvestments2;
     @CsvBindByName
-    String overseasInvestment3;
+    String overseasInvestments3;
     @CsvBindByName
     String overseasInvestments4;
     @CsvBindByName
@@ -85,12 +83,12 @@ public class BusinessImpactDetail {
         this.overseasInvestments2 = overseasInvestments2;
     }
 
-    public String getOverseasInvestment3() {
-        return overseasInvestment3;
+    public String getOverseasInvestments3() {
+        return overseasInvestments3;
     }
 
-    public void setOverseasInvestment3(String overseasInvestment3) {
-        this.overseasInvestment3 = overseasInvestment3;
+    public void setOverseasInvestments3(String overseasInvestments3) {
+        this.overseasInvestments3 = overseasInvestments3;
     }
 
     public String getOverseasInvestments4() {
@@ -117,7 +115,7 @@ public class BusinessImpactDetail {
         this.nonTangibleBenefits = nonTangibleBenefits;
     }
 
-    public BusinessImpactDetail(String FYEndDate, String overseasSale1, String overseasSale2, String overseasSale3, String overseasSale4, String overseasInvestments1, String overseasInvestments2, String overseasInvestment3, String overseasInvestments4, String rationaleForProjections, String nonTangibleBenefits) {
+    public BusinessImpactDetail(String FYEndDate, String overseasSale1, String overseasSale2, String overseasSale3, String overseasSale4, String overseasInvestments1, String overseasInvestments2, String overseasInvestments3, String overseasInvestments4, String rationaleForProjections, String nonTangibleBenefits) {
         this.FYEndDate = FYEndDate;
         this.overseasSale1 = overseasSale1;
         this.overseasSale2 = overseasSale2;
@@ -125,7 +123,7 @@ public class BusinessImpactDetail {
         this.overseasSale4 = overseasSale4;
         this.overseasInvestments1 = overseasInvestments1;
         this.overseasInvestments2 = overseasInvestments2;
-        this.overseasInvestment3 = overseasInvestment3;
+        this.overseasInvestments3 = overseasInvestments3;
         this.overseasInvestments4 = overseasInvestments4;
         this.rationaleForProjections = rationaleForProjections;
         this.nonTangibleBenefits = nonTangibleBenefits;

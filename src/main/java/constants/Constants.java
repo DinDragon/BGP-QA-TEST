@@ -1,8 +1,17 @@
 package constants;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class Constants {
     public static final String  LIST_OF_STRING_DELIMITER = "/";
     public static final String SECRET_KEY = "09384yruwerhgoiu";
+    public static final ArrayList<String> VALID_FILE_FORMAT = new ArrayList<String>(){
+        {
+            add("pdf");
+            add("PDF");
+        }
+    };
     public final class PROPERTY_VARIABLE{
         public static final String PROPERTY_FILE_LOCATION = "src/main/resources/Properties/config.properties";
         public static final String CHROME_BINARY_LOCATION = "chromeBinaryLocation";
@@ -10,6 +19,7 @@ public final class Constants {
         public static final String BASE_URL = "baseUrl";
         public static final String SERVER_LOGIN_USERNAME = "serverLoginUsername";
         public static final String SERVER_LOGIN_PASSWORD = "serverLoginPassword";
+        public static final String FILE_UPLOAD_SCRIPT_LOCATION = "fileUploadScript";
     }
 
     public final class DATA_FILE_NAME{

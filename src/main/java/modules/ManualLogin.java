@@ -9,8 +9,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import util.PropertyReader;
 
 import java.io.IOException;
@@ -45,8 +43,7 @@ public final class ManualLogin {
 
     driver.get(baseURL);
     {
-      WebDriverWait wait = new WebDriverWait(driver, 30);
-      wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".landing-box-login-header-9F3Tb")));
+      WebHelper.waitForElementVisibleCSS(driver, ".landing-box-login-header-9F3Tb");
     }
     driver.findElement(By.cssSelector(".landing-box-login-header-9F3Tb")).click();
 
@@ -62,10 +59,10 @@ public final class ManualLogin {
     driver.findElement(By.cssSelector("#user-info-item .username")).click();
     assertThat(driver.findElement(By.cssSelector("#user-info-item .username")).getText(), is(loginDetail.getUserName()));
     {
-      WebDriverWait wait = new WebDriverWait(driver, 30);
-      wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#dashboard-menubox-app-apply-grant .dashboard-action-title")));
+      WebHelper.waitForElementVisibleCSS(driver, "#dashboard-menubox-app-apply-grant .dashboard-action-title");
     }
 
 
   }
+
 }

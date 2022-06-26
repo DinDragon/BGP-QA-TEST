@@ -15,7 +15,6 @@ public class CustomChromeDriver extends ChromeDriver {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         JavascriptExecutor je =  (JavascriptExecutor)this;
         je.executeScript("window.scrollTo(0," + (super.findElement(by).getLocation().getY() - 100)+ ")");
 

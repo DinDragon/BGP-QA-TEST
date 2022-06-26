@@ -8,9 +8,7 @@ import model.MRAForm.Cost.CostDetail;
 import model.MRAForm.EligibilityDetail;
 import model.LoginDetail;
 import model.MRAForm.ProposalDetail;
-import modules.MRAForm.ContactForm;
-import modules.MRAForm.EligibilityForm;
-import modules.MRAForm.LoadMRAForm;
+import modules.MRAForm.*;
 import modules.ManualLogin;
 import org.junit.After;
 import org.junit.Before;
@@ -78,25 +76,37 @@ public class TestCase1 {
             util.printObjectToJson(proposalDetail);
             util.printObjectToJson(businessImpactDetail);
             util.printObjectToJson(costDetail);
-
             //Fill in eligibility
             EligibilityForm.fillInMRAEligibility(driver,eligibilityDetail);
-            EligibilityForm.clickSaveButtonAndRefresh(driver);
+            GlobalElements.clickSaveButtonAndRefresh(driver);
             EligibilityForm.checkMRAEligibility(driver,eligibilityDetail);
-            EligibilityForm.clickNextButton(driver);
+            GlobalElements.clickNextButton(driver);
 
             //Fill in contact form
             ContactForm.fillInMainContactPerson(driver,contactDetail);
             ContactForm.fillInMailingAddress(driver,contactDetail, loginDetail);
             ContactForm.fillInLetterOfOffer(driver,contactDetail);
-            ContactForm.clickSaveButtonAndRefresh(driver);
+            GlobalElements.clickSaveButtonAndRefresh(driver);
             ContactForm.checkMainContactPerson(driver,contactDetail);
             ContactForm.checkMailingAddress(driver, contactDetail, loginDetail);
             ContactForm.checkLetterOffOfffer(driver, contactDetail);
-            ContactForm.clickNextButton(driver);
+            GlobalElements.clickNextButton(driver);
 
-            //
+            //Fill in and check proposal
+            ProposalForm.fillInProposalDetails(driver, proposalDetail);
+            GlobalElements.clickSaveButtonAndRefresh(driver);
+            ProposalForm.checkProposalDetails(driver, proposalDetail);
+            GlobalElements.clickNextButton(driver);
 
+            //Fill in business impact details
+            BusinessImpactForm.fillInBusinessImpactDetails(driver, businessImpactDetail);
+            GlobalElements.clickSaveButtonAndRefresh(driver);
+            BusinessImpactForm.checkInBusinessImpactDetails(driver, businessImpactDetail);
+            GlobalElements.clickNextButton(driver);
+
+            //COSTS
+            CostDetailsForm.fillInThirdPartyVendor(driver, costDetail);
+            GlobalElements.clickSaveButtonAndRefresh(driver);
             System.out.println("----End Test 1." + (count+1) + "-------");
 
             count ++;

@@ -1,3 +1,3 @@
-isVendorSg,vendorName,uen,supportingDocumentLocation,estimatedCostCurrency,estimatedCostAmount,remarks
-Y,SGVendor,53413479C,C:\\Users\\nasru\\OneDrive\\Govtech QE Tech\\Test file upload\\4.docx,SGD,124,
-Y,SGVendor2,53057293A,C:\\Users\\nasru\\OneDrive\\Govtech QE Tech\\Test file upload\\3.docx,SGD,123,
+isVendorSg,vendorName,isVendorNameInvalid,uen,supportingDocumentLocation,estimatedCostCurrency,estimatedCostAmount,exchangeRate,remarks
+N,foreignVendor1,N,,src/main/resources/UploadFileSamples/a.pdf,SGD,124,,no remarks
+N,foreignVendor2,N,,src/main/resources/UploadFileSamples/b.pdf,SGD,123,,no remarks

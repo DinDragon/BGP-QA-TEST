@@ -17,7 +17,10 @@ public class ThirdPartyCostDetail {
     String estimatedCostAmount;
     @CsvBindByName
     String remarks;
-
+    @CsvBindByName
+    String exchangeRate;
+    @CsvBindByName
+    String isVendorNameInvalid;
     public String getIsVendorSg() {
         return isVendorSg;
     }
@@ -66,6 +69,14 @@ public class ThirdPartyCostDetail {
         this.estimatedCostAmount = estimatedCostAmount;
     }
 
+    public String getExchangeRate() {
+        return exchangeRate;
+    }
+
+    public void setExchangeRate(String exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
     public String getRemarks() {
         return remarks;
     }
@@ -74,7 +85,15 @@ public class ThirdPartyCostDetail {
         this.remarks = remarks;
     }
 
-    public ThirdPartyCostDetail(String isVendorSg, String vendorName, String uen, String supportingDocumentLocation, String estimatedCostCurrency, String estimatedCostAmount, String remarks) {
+    public String getIsVendorNameInvalid() {
+        return isVendorNameInvalid;
+    }
+
+    public void setIsVendorNameInvalid(String isVendorNameInvalid) {
+        this.isVendorNameInvalid = isVendorNameInvalid;
+    }
+
+    public ThirdPartyCostDetail(String isVendorSg, String vendorName, String uen, String supportingDocumentLocation, String estimatedCostCurrency, String estimatedCostAmount, String remarks, String exchangeRate) {
         this.isVendorSg = isVendorSg;
         this.vendorName = vendorName;
         this.uen = uen;
@@ -82,6 +101,7 @@ public class ThirdPartyCostDetail {
         this.estimatedCostCurrency = estimatedCostCurrency;
         this.estimatedCostAmount = estimatedCostAmount;
         this.remarks = remarks;
+        this.exchangeRate = exchangeRate;
     }
 
     public ThirdPartyCostDetail() {

@@ -21,6 +21,8 @@ public class OfficeSpaceRentalDetail {
     String supportingDocumentLocation;
     @CsvBindByName
     String remarks;
+    @CsvBindByName
+    String exchangeRate;
 
     public String getDescription() {
         return description;
@@ -94,10 +96,18 @@ public class OfficeSpaceRentalDetail {
         this.remarks = remarks;
     }
 
+    public String getExchangeRate() {
+        return exchangeRate;
+    }
+
+    public void setExchangeRate(String exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
     public OfficeSpaceRentalDetail() {
     }
 
-    public OfficeSpaceRentalDetail(String description, String rentalDuration, String monthyRentalCurrency, String montlyRentalAmount, String estimatedCost, String actualMonthlyRental, String actualEstimatedCost, String supportingDocumentLocation, String remarks) {
+    public OfficeSpaceRentalDetail(String description, String rentalDuration, String monthyRentalCurrency, String montlyRentalAmount, String estimatedCost, String actualMonthlyRental, String actualEstimatedCost, String supportingDocumentLocation, String remarks, String exchangeRate) {
         this.description = description;
         this.rentalDuration = rentalDuration;
         this.monthyRentalCurrency = monthyRentalCurrency;
@@ -107,5 +117,6 @@ public class OfficeSpaceRentalDetail {
         this.actualEstimatedCost = actualEstimatedCost;
         this.supportingDocumentLocation = supportingDocumentLocation;
         this.remarks = remarks;
+        this.exchangeRate = exchangeRate;
     }
 }
